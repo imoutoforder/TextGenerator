@@ -40,7 +40,7 @@ class FakeTextDataGenerator(object):
                 raise ValueError("Vertical handwritten text is unavailable")
             image = HandwrittenTextGenerator.generate(text)
         else:
-            image = ComputerTextGenerator.generate(make_farsi_text(text), font, text_color, size, orientation, space_width)
+            image = ComputerTextGenerator.generate(text, font, text_color, size, orientation, space_width)
 
         random_angle = random.randint(0-skewing_angle, skewing_angle)
 

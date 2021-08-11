@@ -384,7 +384,8 @@ def main():
         with open(os.path.join(args.output_dir, "labels.txt"), 'w', encoding="utf8") as f:
             for i in range(string_count):
                 file_name = str(i) + "." + args.extension
-                newLable = reversi(make_farsi_text(strings[i])) 
+                # newLable = reversi(make_farsi_text(strings[i])) 
+                newLable = strings[i]
                 f.write("{}\t{}\n".format(file_name, newLable))
 
 if __name__ == '__main__':

@@ -29,13 +29,13 @@ def create_strings_from_file(filename, count, lang):
             # if lang == 'fa'
             if len(lines) >= count - len(strings):
                 if lang == "fa":
-                    lines_fa = [make_farsi_text(l) for l in lines[0:count - len(strings)]]
+                    lines_fa = [l for l in lines[0:count - len(strings)]]
                     strings.extend(lines_fa)
                 else:
                     strings.extend(lines[0:count - len(strings)])
             else:
                 if lang == "fa":
-                    lines_fa = [make_farsi_text(l) for l in lines]
+                    lines_fa = [l for l in lines]
                     strings.extend(lines_fa)
                 else:
                     strings.extend(lines)
@@ -74,7 +74,7 @@ def create_strings_from_dict(length, allow_variable, count, lang_dict, lang):
             current_string += lang_dict[random.randrange(dict_len)][:-1]
             current_string += ' '
         if lang == "fa":
-            strings.append(make_farsi_text(current_string[:-1]))
+            strings.append(current_string[:-1])
         else:
             strings.append(current_string[:-1])
     return strings
